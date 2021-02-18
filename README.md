@@ -19,6 +19,6 @@ Cấu hình ubuntu wsl2, cài đặt các gói cấu hình
 
 ## Install provision
 
-    ansible-playbook -i host -l self provision.yml  --vault-password-file=vault.txt
-    ansible-playbook -i host -l self provision.yml  --vault-password-file=vault.txt --tags common
-    ansible-playbook -i host -l self provision.yml  --vault-password-file=vault.txt --tags docker
+    ansible-playbook -i hosts -l self provision.yml  --vault-password-file=vault.txt
+    ansible-playbook -i hosts -l self provision.yml  --vault-password-file=vault.txt --tags common
+    ansible-playbook -i hosts -l self provision.yml  --vault-password-file=vault.txt --tags docker
