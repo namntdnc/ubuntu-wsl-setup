@@ -4,6 +4,7 @@
   become: true
   vars_files:
     - secret
+    - groups_vars/self
   roles: 
-    #- app.install-common
+    - app.install-common
     - app.install-docker

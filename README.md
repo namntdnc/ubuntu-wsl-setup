@@ -4,9 +4,7 @@ Cấu hình ubuntu wsl2, cài đặt các gói cấu hình
 
 ## Pre-setup
 
-    sudo service sshd restart
-
-    sudo dpkg-reconfigure openssh-server
+    sudo service ssh restart
 
     sudo cp ./ansible.cfg /etc/ansible/ansible.cfg
 
@@ -17,3 +15,5 @@ Cấu hình ubuntu wsl2, cài đặt các gói cấu hình
 ## Install provision
 
     ansible-playbook -i host -l self provision.yml  --vault-password-file=vault.txt
+    ansible-playbook -i host -l self provision.yml  --vault-password-file=vault.txt --tags common
+    ansible-playbook -i host -l self provision.yml  --vault-password-file=vault.txt --tags docker
