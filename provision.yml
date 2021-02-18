@@ -1,0 +1,9 @@
+- name: Setup-config
+  hosts: 
+    - self
+  become: true
+  vars_files:
+    - secret
+  roles: 
+    #- app.install-common
+    - app.install-docker
