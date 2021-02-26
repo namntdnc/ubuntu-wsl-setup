@@ -38,7 +38,7 @@
   get_url:
     url: https://github.com/docker/compose/releases/download/1.28.2/docker-compose-Linux-x86_64
     dest: /usr/local/bin/docker-compose
-    mode: 'u+x,g+x'
+    mode: '+X'
   tags: docker
 
 - name: Add process user to docker groups
@@ -53,5 +53,4 @@
   service:
     name: docker
     state: started
-    enabled: true
   tags: docker

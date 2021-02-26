@@ -7,3 +7,16 @@
   roles: 
     - app.install-common
     - app.install-docker
+
+- name: copy-file
+  hosts: 
+    - self
+  become: true
+  vars_files:
+    - secret
+  tasks:
+    - copy:
+        src: '/home/namntdnc/ubuntu-wsl-setup/test/'
+        dest: '/home/namntdnc/test'
+        mode: 0755
+      tags: test
