@@ -8,9 +8,14 @@
   register: lsb_current
   tags: docker
 
+- name: check arch
+  command: lsb_release -cs
+  register: arch_type
+  tags: docker
+
 - name: add docker repo
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ lsb_current.stdout }} stable
+    repo: deb [arch={{arch_type}}] https://download.docker.com/linux/ubuntu {{ lsb_current.stdout }} stable
   tags: docker
 
 - name: Run the equivalent of "apt-get update" as a separate step
